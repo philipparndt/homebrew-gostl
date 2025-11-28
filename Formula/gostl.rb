@@ -5,13 +5,13 @@
 class Gostl < Formula
   desc "3D model file combiner and SCAD renderer"
   homepage "https://github.com/philipparndt/gostl"
-  version "0.2.0"
+  version "0.3.0"
   license "Apache-2.0"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/philipparndt/gostl/releases/download/v0.2.0/gostl_darwin_x86_64.tar.gz"
-    sha256 "ec5cf60c42fd27c2f9e4952ba95c2c931362505dc2f70e0a24477effb3f2ba86"
+    url "https://github.com/philipparndt/gostl/releases/download/v0.3.0/gostl_darwin_x86_64.tar.gz"
+    sha256 "a52fa24a10be1fb2b7e1d5aeee68b5ef694fef06a1cc656a8a5fa281f9f19dee"
 
     def install
       bin.install "gostl"
@@ -21,8 +21,8 @@ class Gostl < Formula
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/philipparndt/gostl/releases/download/v0.2.0/gostl_darwin_arm64.tar.gz"
-    sha256 "24c2b76b7cef63c9a49ba8ad96e318612c4c48d52fe3b923c229f83fd1a1e1ef"
+    url "https://github.com/philipparndt/gostl/releases/download/v0.3.0/gostl_darwin_arm64.tar.gz"
+    sha256 "ac34663176dfc0b702e1e7e901c7b114bad46206e75a1578c45be1cd492d093e"
 
     def install
       bin.install "gostl"
