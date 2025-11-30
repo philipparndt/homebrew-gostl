@@ -6,8 +6,8 @@ class Gostl < Formula
   depends_on arch: :arm64
   depends_on :macos
 
-  url "https://github.com/philipparndt/gostl/releases/download/v0.5.1/GoSTL_darwin_arm64.tar.gz"
-  sha256 "8a7dd0e66a676acef57a15a53bd17eb078db6317ec2f49cbdda33a9ef3bbae18"
+  url "https://github.com/philipparndt/gostl/releases/download/v0.5.2/GoSTL_darwin_arm64.tar.gz"
+  sha256 "380df978cad5505a9050fa365ef516e6b8c192d9aed319ee26808d2e560f663a"
 
   def install
     bin.install "GoSTL" => "gostl"
