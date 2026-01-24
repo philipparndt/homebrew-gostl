@@ -1,14 +1,14 @@
 class Gostl < Formula
   desc "3D STL viewer and OpenSCAD renderer"
   homepage "https://github.com/philipparndt/gostl"
-  version "0.17.0"
+  version "0.18.0"
   license "Apache-2.0"
 
   depends_on arch: :arm64
   depends_on :macos
 
-  url "https://github.com/philipparndt/gostl/releases/download/v0.17.0/GoSTL_darwin_arm64.tar.gz"
-  sha256 "ae39243e0f482c3676e934278487b9f4bea6e8c5fc46cdf219a8ab8e5d63d119"
+  url "https://github.com/philipparndt/gostl/releases/download/v0.18.0/GoSTL_darwin_arm64.tar.gz"
+  sha256 "157dea2fe013da79f1fc8b85497026e1771ea0674ed8b8346f1fd476fe6488da"
 
   def install
     # Install CLI binary
