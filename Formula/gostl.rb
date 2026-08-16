@@ -1,14 +1,14 @@
 class Gostl < Formula
   desc "3D STL viewer and OpenSCAD renderer"
   homepage "https://github.com/philipparndt/gostl"
-  version "0.23.0"
+  version "0.23.1"
   license "Apache-2.0"
 
   depends_on arch: :arm64
   depends_on :macos
 
-  url "https://github.com/philipparndt/gostl/releases/download/v0.23.0/GoSTL_darwin_arm64.tar.gz"
-  sha256 "875e395e1e9b1459885ef84486dc7aeb4d9f525dfc94195c461fc01497a1332e"
+  url "https://github.com/philipparndt/gostl/releases/download/v0.23.1/GoSTL_darwin_arm64.tar.gz"
+  sha256 "67243cbad26b959840859847cbd611a9a045de31b49190758fe6917e4d82155e"
 
   def install
     # Install CLI binary
@@ -33,7 +33,14 @@ class Gostl < Formula
     # App icon. It ships inside the resource bundle because that is
     # what SwiftPM builds and what the tarball carries; the Dock reads
     # it from Contents/Resources, so it has to exist in both places.
-    cp bin/"GoSTL_GoSTL.bundle/Contents/Resources/AppIcon.icns", app_resources/"AppIcon.icns"
+    # The release build normalises it into Contents/Resources, but an
+    # older tarball may still carry it at the bundle root, so take it
+    # from wherever it actually is.
+    icon = [
+      bin/"GoSTL_GoSTL.bundle/Contents/Resources/AppIcon.icns",
+      bin/"GoSTL_GoSTL.bundle/AppIcon.icns",
+    ].find(&:exist?)
+    cp icon, app_resources/"AppIcon.icns" if icon
 
     # Create Info.plist with document type declarations
     (app_contents/"Info.plist").write <<~XML
